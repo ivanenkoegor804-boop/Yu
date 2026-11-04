@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090b12">
+<title>CARDHUNT — 100 design collection</title>
+<style>
+:root{--bg:#080a11;--panel:#111522;--panel2:#171d2d;--line:#293148;--muted:#8e98b2;--text:#f2f4fb;--violet:#9b7cff;--cyan:#54d9ed;--gold:#e7c77b;--green:#72ddb0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#242047 0,#0b0e19 43%,var(--bg) 78%);color:var(--text);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer;border:0} .app{max-width:1440px;margin:auto;padding:18px 22px 90px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 2px 22px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px;font-size:19px}.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#8e6bff,#3ec9e7);display:grid;place-items:center;box-shadow:0 0 30px #8b6bff55;font-size:21px}.stats{display:flex;gap:9px;flex-wrap:wrap}.stat{background:#121726d9;border:1px solid var(--line);border-radius:12px;padding:8px 13px;min-width:104px}.stat small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}.stat b{font-size:15px}.layout{display:grid;grid-template-columns:205px minmax(0,1fr) 265px;gap:16px;align-items:start}.panel{background:linear-gradient(145deg,#151a2aee,#0f1320f2);border:1px solid var(--line);border-radius:18px;box-shadow:0 16px 45px #0003}.sidebar{padding:14px;position:sticky;top:12px}.nav{display:flex;align-items:center;gap:11px;width:100%;padding:12px 13px;background:transparent;border-radius:11px;color:#aeb7cd;text-align:left;margin:3px 0}.nav.active,.nav:hover{background:#282342;color:#fff}.nav span:first-child{width:20px;text-align:center}.side-note{border-top:1px solid var(--line);margin-top:16px;padding:14px 5px 2px;color:var(--muted);font-size:12px}
+.main{padding:22px;min-height:600px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:800}.heading{font-size:25px;font-weight:850;margin:5px 0 3px}.sub{color:var(--muted);font-size:13px}.scanner{margin:22px auto 18px;max-width:560px;min-height:270px;border-radius:20px;border:1px solid #39345d;background:radial-gradient(ellipse at 50% 45%,#28234b 0,#171a30 42%,#101523 78%);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:22px}.scanner:before,.scanner:after{content:"";position:absolute;border:1px solid #8674e833;border-radius:50%;width:270px;height:270px;animation:pulse 5s infinite}.scanner:after{width:380px;height:380px;animation-delay:1.3s}.scanlines{position:absolute;inset:0;background:linear-gradient(transparent 49%,#a18bff0d 50%,transparent 51%);background-size:100% 8px;pointer-events:none}.scan-icon{font-size:54px;filter:drop-shadow(0 0 20px #9c7bff);z-index:1}.scanner h2{z-index:1;margin:8px 0 2px;font-size:20px}.scanner p{z-index:1;color:#a8afd0;font-size:12px;margin:0 0 18px}.primary{z-index:1;background:linear-gradient(100deg,#8c69ff,#4d9ee9);padding:14px 28px;border-radius:12px;font-weight:900;letter-spacing:1px;box-shadow:0 8px 28px #775bff55;transition:.2s}.primary:hover{transform:translateY(-2px);filter:brightness(1.1)}.primary:disabled{opacity:.5;cursor:not-allowed;transform:none}.energyline{z-index:1;margin-top:13px;color:#aeb7d0;font-size:11px}.energyline b{color:#fff}
+.card-stage{display:flex;justify-content:center;perspective:1000px;margin:20px 0}.game-card{width:min(100%,390px);aspect-ratio:1.586;border-radius:19px;padding:20px 22px;position:relative;overflow:hidden;box-shadow:0 20px 45px #0008;transform:rotateX(0) rotateY(0);transition:transform .35s,filter .35s;isolation:isolate;transform-style:preserve-3d;cursor:pointer;background-size:cover}.game-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,#ffffff40,transparent 32%),linear-gradient(120deg,#ffffff10,transparent 42%);z-index:-1}.game-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff28;border-radius:50%;right:-50px;bottom:-100px;box-shadow:0 0 0 18px #ffffff08,0 0 0 38px #ffffff06;z-index:-1}.game-card .design-pattern{position:absolute;inset:0;z-index:0;opacity:.9;pointer-events:none;mix-blend-mode:screen}
+.game-card .holo{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.22;background:linear-gradient(115deg,transparent 10%,#fff8 25%,#b8f7ff55 32%,#e4aaff66 40%,transparent 53%),repeating-linear-gradient(135deg,#ffffff0b 0 2px,transparent 2px 7px);mix-blend-mode:screen}.game-card .card-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}.game-card .micro{position:absolute;right:18px;top:52px;font-size:8px;letter-spacing:2px;opacity:.48}.game-card .contactless{font-size:17px;opacity:.8;transform:rotate(90deg);display:inline-block;margin-left:7px}.game-card .card-edge{position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 1px 1px #ffffff70,inset 0 -2px 5px #0007;pointer-events:none;z-index:3}.game-card[data-material="metal"]{box-shadow:0 20px 45px #0009,inset 0 0 0 1px #ffffff66}.game-card[data-material="metal"] .holo{opacity:.4;background:linear-gradient(115deg,transparent 8%,#fff9 25%,#fff2 31%,#8beaff66 38%,#f2d2ff66 45%,transparent 58%),repeating-linear-gradient(0deg,#ffffff10 0 1px,transparent 1px 4px)}.game-card[data-material="carbon"]{background-image:repeating-linear-gradient(45deg,#ffffff08 0 2px,transparent 2px 5px)!important}.game-card[data-material="prism"] .holo{opacity:.65;background:conic-gradient(from 20deg at 75% 30%,#ff6eb755,#7b8cff66,#59f0d366,#f8dc6c66,#ff6eb755);mix-blend-mode:screen}.game-card[data-material="paper"]{filter:saturate(.75);box-shadow:0 14px 28px #0007,inset 0 0 0 1px #ffffff33}.card-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.chip{width:39px;height:29px;border-radius:7px;background:linear-gradient(135deg,#f1e2ad,#9a8654);margin-top:18px;box-shadow:inset 0 0 0 1px #fff8,inset 0 0 0 3px #6c603e;position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;overflow:hidden}.chip i{border:1px solid #776b47;display:block}.chip i:first-child{grid-row:span 2;border-radius:5px 0 0 5px}.chip i:last-child{grid-column:2}.card-number{font-size:clamp(16px,3vw,22px);letter-spacing:3px;margin-top:13px;text-shadow:0 2px 8px #0005}.card-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:15px;font-size:10px;text-transform:uppercase;letter-spacing:1px}.card-bottom b{display:block;font-size:13px;letter-spacing:0;text-transform:none;margin-top:3px}.card-brand{font-weight:900;font-style:italic;font-size:18px;opacity:.9}
+.result{padding:16px;border:1px solid var(--line);border-radius:15px;background:#0b101c}.result-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.rarity{font-size:10px;font-weight:900;letter-spacing:1px;padding:5px 9px;border-radius:20px;background:#ffffff15;color:#fff}.result h3{margin:8px 0 2px;font-size:19px}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}.metric{background:#171d2b;border-radius:10px;padding:9px}.metric small{display:block;color:var(--muted);font-size:10px}.metric b{font-size:13px}.action-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.secondary{background:#222a3d;border:1px solid #36415b;padding:10px 13px;border-radius:10px;font-weight:700;font-size:12px}.secondary:hover{background:#303b55}.section-title{font-size:16px;font-weight:800;margin:24px 0 12px}.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.feed-item{background:#121827;border:1px solid var(--line);border-radius:11px;padding:10px;font-size:11px}.feed-item b{display:block;font-size:12px;margin-bottom:3px}.right{padding:16px}.right h3{margin:3px 0 12px}.empty{color:var(--muted);font-size:12px;text-align:center;padding:24px 8px}.progress{height:7px;background:#252c40;border-radius:8px;overflow:hidden;margin:8px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:8px}.mini-row{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:13px}.content-view{display:none}.content-view.active{display:block}.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:13px}.collection-card{background:#111827;border:1px solid var(--line);border-radius:14px;padding:10px;cursor:pointer}.collection-card .game-card{width:100%;padding:12px;border-radius:11px;box-shadow:none}.collection-card .card-number{font-size:11px;letter-spacing:1px}.collection-card .chip{width:26px;height:19px;margin-top:9px}.collection-card .card-top{font-size:8px}.collection-card .card-bottom{font-size:8px;margin-top:8px}.collection-card .card-bottom b{font-size:10px}.collection-card h4{margin:9px 0 2px}.collection-card small{color:var(--muted)}.upgrade-list{display:grid;gap:10px}.upgrade{display:flex;align-items:center;gap:13px;background:#111827;border:1px solid var(--line);padding:14px;border-radius:13px}.upgrade .uicon{font-size:24px}.upgrade .udesc{flex:1}.upgrade p{margin:3px 0;color:var(--muted);font-size:11px}.upgrade button{background:#34305c;padding:9px 12px;border-radius:9px;font-weight:800;font-size:11px}.upgrade button:disabled{opacity:.4}.album{background:#111827;border:1px solid var(--line);border-radius:13px;padding:14px;margin:10px 0}.album p{color:var(--muted);font-size:12px;margin:4px 0}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#202a3d;border:1px solid #596783;padding:11px 17px;border-radius:12px;z-index:10;transition:.25s;box-shadow:0 10px 35px #0008}.toast.show{opacity:1;transform:translate(-50%,0)}.modal{position:fixed;inset:0;background:#03050bd9;display:none;place-items:center;padding:18px;z-index:20;backdrop-filter:blur(8px)}.modal.show{display:grid}.modal-box{max-width:520px;width:100%;background:#131a2a;border:1px solid #414767;border-radius:18px;padding:20px;text-align:center;animation:pop .35s}.modal-box h2{margin:8px 0}.modal-box .game-card{margin:18px auto}.muted{color:var(--muted)}.mobile-nav{display:none}
+@keyframes pulse{0%{transform:scale(.65);opacity:.5}100%{transform:scale(1.3);opacity:0}}@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}@keyframes scan{0%{transform:translateY(-160px);opacity:0}50%{opacity:1}100%{transform:translateY(160px);opacity:0}}
+@media(max-width:1000px){.layout{grid-template-columns:175px minmax(0,1fr)}.right{display:none}.app{padding:12px}.main{padding:17px}}
+@media(max-width:650px){.app{padding:10px 10px 84px}.top{align-items:flex-start;flex-direction:column;padding-bottom:13px}.brand{font-size:17px}.stats{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}.stat{min-width:0;padding:7px 9px}.stat b{font-size:13px}.layout{display:block}.sidebar{display:none}.main{padding:14px;min-height:500px}.heading{font-size:22px}.scanner{min-height:245px;margin-top:17px}.feed{grid-template-columns:repeat(2,1fr)}.result-grid{grid-template-columns:repeat(3,1fr)}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#0c101bed;border-top:1px solid var(--line);padding:7px 4px calc(7px + env(safe-area-inset-bottom));justify-content:space-around;z-index:8;backdrop-filter:blur(15px)}.mobile-nav button{background:none;color:#9da8c1;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:3px}.mobile-nav button span{font-size:18px}.mobile-nav button.active{color:#c4aaff}.game-card{padding:16px}.card-number{letter-spacing:2px}.card-bottom{margin-top:10px}.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.collection-card{padding:7px}.collection-card .game-card{padding:9px}.upgrade{padding:10px}.upgrade button{padding:8px}.toast{width:max-content;max-width:90%;text-align:center}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="logo">⌕</div><div>CARDHUNT <div style="font-size:9px;color:#8f9ab7;letter-spacing:3px;font-weight:600">100 UNIQUE CARD DESIGNS</div></div></div>
+  <div class="stats">
+    <div class="stat"><small>Кошелёк</small><b id="money">0 ₽</b></div>
+    <div class="stat"><small>Энергия</small><b id="energy">100 / 100</b></div>
+    <div class="stat"><small>Уровень</small><b id="level">1 · 0 XP</b></div>
+  </div>
+</header>
+<div class="layout">
+<aside class="panel sidebar">
+  <button class="nav active" data-view="generator"><span>⌕</span> Генератор</button>
+  <button class="nav" data-view="collection"><span>▤</span> Коллекция <span id="collectionCount" style="margin-left:auto;color:#9d8bff">0</span></button>
+  <button class="nav" data-view="upgrades"><span>⚙</span> Улучшения</button>
+  <button class="nav" data-view="albums"><span>▧</span> Альбомы</button>
+  <button class="nav" data-view="museum"><span>◇</span> Музей</button>
+  <div class="side-note">Все карты, номера и балансы — вымышленные игровые объекты. CARDHUNT не связан с банками и платёжными системами.</div>
+</aside>
+<main class="panel main">
+<section class="content-view active" id="view-generator">
+  <div class="eyebrow">Сектор исследования · 01</div><div class="heading">Лаборатория поиска</div><div class="sub">Сканируй забытые архивы. Каждая находка уникальна.</div>
+  <div class="scanner"><div class="scanlines"></div><div class="scan-icon">⌁</div><h2>Сканер CARDHUNT</h2><p>Ожидание сигнала из цифрового хранилища</p><button class="primary" id="findBtn">⌕ НАЙТИ КАРТУ</button><div class="energyline">Стоимость поиска: <b id="searchCost">10</b> энергии · <span id="scanStatus">Система готова</span></div></div>
+  <div id="latestResult"><div class="empty">Здесь появится твоя последняя находка.<br>Запусти сканирование, чтобы начать коллекцию.</div></div>
+  <div class="section-title">Последние сигналы</div><div class="feed" id="feed"><div class="empty">Пока нет находок</div></div>
+</section>
+<section class="content-view" id="view-collection">
+  <div class="eyebrow">Личный архив</div><div class="heading">Коллекция карт</div><div class="sub" id="collectionSummary">Найдено: 0 карт</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:17px 0"><select id="sortCards" class="secondary"><option value="new">Сначала новые</option><option value="value">По ценности</option><option value="balance">По балансу</option><option value="rarity">По редкости</option></select><select id="filterRarity" class="secondary"><option value="all">Все редкости</option><option>Обычная</option><option>Необычная</option><option>Редкая</option><option>Эпическая</option><option>Легендарная</option><option>Мифическая</option><option>Артефакт</option><option>Абсолютная</option></select></div>
+  <div class="cards-grid" id="collectionGrid"></div>
+</section>
+<section class="content-view" id="view-upgrades">
+  <div class="eyebrow">Модернизация оборудования</div><div class="heading">Улучшения</div><div class="sub">Развивай лабораторию и повышай эффективность поиска.</div><div class="upgrade-list" id="upgradeList" style="margin-top:18px"></div>
+</section>
+<section class="content-view" id="view-albums">
+  <div class="eyebrow">Задания коллекционера</div><div class="heading">Альбомы</div><div class="sub">Собирай тематические серии и получай награды.</div><div id="albumList"></div>
+</section>
+<section class="content-view" id="view-museum">
+  <div class="eyebrow">Выставочное пространство</div><div class="heading">Личный музей</div><div class="sub">Твои самые ценные находки — на одной витрине.</div><div id="museumGrid" class="cards-grid" style="margin-top:18px"></div>
+</section>
+</main>
+<aside class="panel right">
+  <div class="eyebrow">Профиль исследователя</div><h3>Твоя статистика</h3>
+  <div class="mini-row"><span>Всего находок</span><b id="statFound">0</b></div>
+  <div class="mini-row"><span>Самая редкая</span><b id="statRare">—</b></div>
+  <div class="mini-row"><span>Извлечено средств</span><b id="statEarned">0 ₽</b></div>
+  <div class="mini-row"><span>Опыт</span><b id="statXp">0 XP</b></div>
+  <div class="section-title" style="font-size:13px">До следующего уровня</div><div class="progress"><i id="xpBar" style="width:0%"></i></div><div class="mini-row"><span id="xpText">0 / 100 XP</span><b id="levelSmall">Ур. 1</b></div>
+  <div class="section-title" style="font-size:13px">Вероятности находок</div><div id="odds"></div>
+  <div class="side-note">Автосохранение включено. Прогресс хранится в этом браузере.</div>
+</aside>
+</div>
+</div>
+<nav class="mobile-nav">
+<button class="active" data-view="generator"><span>⌕</span>Поиск</button><button data-view="collection"><span>▤</span>Коллекция</button><button data-view="upgrades"><span>⚙</span>Апгрейды</button><button data-view="albums"><span>▧</span>Альбомы</button><button data-view="museum"><span>◇</span>Музей</button>
+</nav>
+<div class="modal" id="revealModal"><div class="modal-box"><div class="eyebrow">Сигнал обнаружен</div><h2 id="revealTitle">Новая карта!</h2><div id="revealCard"></div><div class="muted" id="revealText"></div><button class="primary" id="closeReveal" style="margin-top:17px">ПРОДОЛЖИТЬ</button></div></div>
+<div class="toast" id="toast"></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const rarity=[
+{name:'Обычная',chance:55,color:'#aab3c5',mult:1},
+{name:'Необычная',chance:25,color:'#65d5a6',mult:1.4},
+{name:'Редкая',chance:12,color:'#54b9ed',mult:2.2},
+{name:'Эпическая',chance:5,color:'#a77cff',mult:4},
+{name:'Легендарная',chance:2,color:'#f0bd61',mult:8},
+{name:'Мифическая',chance:.8,color:'#fa78bd',mult:15},
+{name:'Артефакт',chance:.19,color:'#ff785e',mult:35},
+{name:'Абсолютная',chance:.01,color:'#fff1a6',mult:100}
+];
+const names=['Astra','Phantom','Nebula','Obsidian','Aurora','Eclipse','Vortex','Nova','Mirage','Titan','Spectra','Nexus','Velvet','Quantum','Monarch','Orion','Cipher','Zenith','Onyx','Stellar'];
+const surnames=['Black','Prime','Pulse','Legacy','Zero','Gold','Shadow','Infinity','Crystal','Unknown','Deluxe','Origin'];
+const banks=['NOVA FINANCE','ORBITAL UNION','AETHER BANK','NORTHSTAR','VANTAGE','LUMEN CREDIT','SILVERLINE','MONOLITH'];
+const currencies=[{s:'₽',n:'Рубли',m:1},{s:'$',n:'Доллары',m:92},{s:'€',n:'Евро',m:99},{s:'£',n:'Фунты',m:116},{s:'¥',n:'Юани',m:13}];
+const palettes=[
+['#172f4c','#286f83'],['#271c49','#704b9e'],['#20252c','#59616d'],['#4b2638','#a64f6d'],['#163c36','#328b72'],['#4b3b20','#a78a46'],['#17233f','#4265a5'],['#3b1f23','#9d4e4a'],['#1d3540','#5b9ba5'],['#29263c','#8174a9']
+];
+
+const designFamilies=[
+ {series:'NEBULA',mark:'✧',pattern:'radial-gradient(circle at 78% 28%,#ffffff30 0 2px,transparent 3px),radial-gradient(circle at 68% 62%,#ffffff20 0 1px,transparent 2px)',label:'Звёздная пыль'},
+ {series:'CIRCUIT',mark:'⌘',pattern:'repeating-linear-gradient(90deg,transparent 0 24px,#ffffff12 25px 26px),repeating-linear-gradient(0deg,transparent 0 19px,#ffffff0d 20px 21px)',label:'Микросхема'},
+ {series:'ROYAL',mark:'♜',pattern:'repeating-linear-gradient(45deg,transparent 0 13px,#ffffff12 14px 15px),repeating-linear-gradient(-45deg,transparent 0 13px,#ffffff0c 14px 15px)',label:'Королевский узор'},
+ {series:'WAVE',mark:'〰',pattern:'repeating-radial-gradient(ellipse at 90% 100%,transparent 0 10px,#ffffff16 11px 12px,transparent 13px 22px)',label:'Волновая гравировка'},
+ {series:'MONOLITH',mark:'◈',pattern:'linear-gradient(135deg,transparent 35%,#ffffff18 36% 37%,transparent 38%),linear-gradient(45deg,transparent 60%,#ffffff12 61% 62%,transparent 63%)',label:'Геометрический монолит'},
+ {series:'AURORA',mark:'✺',pattern:'conic-gradient(from 210deg at 80% 25%,transparent,#ffffff25,transparent,#ffffff12,transparent)',label:'Северное сияние'},
+ {series:'CARBON',mark:'▧',pattern:'repeating-linear-gradient(45deg,#ffffff0b 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,#00000015 0 2px,transparent 2px 6px)',label:'Плетёный карбон'},
+ {series:'ROYALTY',mark:'♛',pattern:'radial-gradient(ellipse at 80% 20%,#ffffff25,transparent 45%),linear-gradient(90deg,transparent 48%,#ffffff12 49% 50%,transparent 51%)',label:'Премиальная эмблема'},
+ {series:'GLITCH',mark:'⌁',pattern:'repeating-linear-gradient(0deg,transparent 0 7px,#ffffff12 8px 9px),linear-gradient(90deg,transparent 65%,#ffffff14 66% 68%,transparent 69%)',label:'Цифровой сбой'},
+ {series:'ARCHIVE',mark:'❖',pattern:'repeating-linear-gradient(135deg,transparent 0 17px,#ffffff10 18px 19px),radial-gradient(circle at 18% 80%,#ffffff20,transparent 32%)',label:'Архивная печать'}
+];
+const designCatalog=designFamilies.flatMap((f,fi)=>palettes.map((p,pi)=>({
+ id:fi*10+pi,series:f.series,mark:f.mark,pattern:f.pattern,label:f.label,
+ p1:p[0],p2:p[1],designName:`${f.series}-${String(pi+1).padStart(2,'0')}`
+})));
+
+const upgrades=[
+{id:'scanner',name:'Спектральный сканер',icon:'⌁',desc:'Повышает шанс редких находок и открывает больше сигналов.',base:180,max:20},
+{id:'processor',name:'Процессор поиска',icon:'▦',desc:'Снижает расход энергии на поиск.',base:240,max:10},
+{id:'analyzer',name:'Анализатор баланса',icon:'◈',desc:'Увеличивает внутриигровой баланс найденных карт.',base:300,max:20},
+{id:'battery',name:'Энергоблок',icon:'ϟ',desc:'Увеличивает максимальный запас энергии.',base:220,max:10},
+{id:'autosearch',name:'Автопоиск',icon:'⟳',desc:'Периодически выполняет поиск автоматически, пока хватает энергии.',base:900,max:5}
+];
+const albumDefs=[
+{id:'world',name:'Мировые валюты',desc:'Найди карты с четырьмя разными валютами.',goal:4,reward:1200,check:c=>new Set(c.map(x=>x.currency)).size>=4},
+{id:'rainbow',name:'Спектр редкости',desc:'Собери по одной карте пяти разных уровней редкости.',goal:5,reward:1800,check:c=>new Set(c.map(x=>x.rarity)).size>=5},
+{id:'archive',name:'Забытый архив',desc:'Найди 25 уникальных карт.',goal:25,reward:2500,check:c=>c.length>=25},
+{id:'highroller',name:'Крупная находка',desc:'Найди карту с игровым балансом от 50 000.',goal:1,reward:1500,check:c=>c.some(x=>x.balance>=50000)}
+];
+const fresh=()=>({money:500,energy:100,maxEnergy:100,xp:0,level:1,found:0,earned:0,cards:[],upgrades:{},claimed:[],pity:0,lastEnergy:Date.now(),lastCard:null,feed:[]});
+let state;
+try{state={...fresh(),...JSON.parse(localStorage.getItem('cardhunt_save')||'{}')};state.upgrades=state.upgrades||{};state.cards=state.cards||[];state.feed=state.feed||[];state.claimed=state.claimed||[]}catch(e){state=fresh()}
+const save=()=>{state.lastEnergy=Date.now();localStorage.setItem('cardhunt_save',JSON.stringify(state))};
+const fmt=n=>Math.floor(n).toLocaleString('ru-RU');
+const levelNeed=()=>100+(state.level-1)*75;
+const getLv=id=>state.upgrades[id]||0;
+const cost=u=>Math.floor(u.base*Math.pow(1.62,getLv(u.id)));
+const searchCost=()=>Math.max(3,10-getLv('processor'));
+const toast=msg=>{ $('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)};
+function regen(){let now=Date.now(),elapsed=Math.floor((now-(state.lastEnergy||now))/30000);if(elapsed>0){state.energy=Math.min(state.maxEnergy,state.energy+elapsed);state.lastEnergy=now;}}
+function rollRarity(){
+ let weights=rarity.map(r=>r.chance);
+ const boost=getLv('scanner')*.055;
+ for(let i=2;i<weights.length;i++)weights[i]*=(1+boost*(i-1));
+ if(state.pity>=24){weights[4]+=Math.min(10,(state.pity-23)*1.5)}
+ if(state.pity>=49){weights[5]+=8}
+ let total=weights.reduce((a,b)=>a+b,0),v=Math.random()*total;
+ for(let i=0;i<weights.length;i++){v-=weights[i];if(v<=0)return rarity[i]}
+ return rarity[0];
+}
+function makeCard(){
+ const r=rollRarity(),cur=currencies[Math.floor(Math.random()*currencies.length)],p=palettes[Math.floor(Math.random()*palettes.length)];
+ const index=state.found+1,bal=Math.random()<.16?0:Math.floor((Math.random()**2)*4500*r.mult*(1+getLv('analyzer')*.12));
+ const year=1998+Math.floor(Math.random()*29),id='CH-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+String(index).padStart(4,'0');
+ const design=designCatalog[Math.floor(Math.random()*designCatalog.length)];
+ const materialPool=r.name==='Абсолютная'?['prism','metal']:r.name==='Артефакт'?['metal','carbon','prism']:['holo','metal','carbon','paper'];const material=materialPool[Math.floor(Math.random()*materialPool.length)];return {id,name:names[Math.floor(Math.random()*names.length)]+' '+surnames[Math.floor(Math.random()*surnames.length)],bank:banks[Math.floor(Math.random()*banks.length)],brandMark:design.mark,material,series:design.series,designName:design.designName,designLabel:design.label,pattern:design.pattern,rarity:r.name,color:r.color,p1:design.p1,p2:design.p2,currency:cur.s,currencyName:cur.n,balance:bal,year,condition:['Потёртая','Хорошая','Отличная','Коллекционная'][Math.floor(Math.random()*4)],value:Math.floor((30+Math.random()*140)*r.mult),number:Array.from({length:4},()=>String(Math.floor(Math.random()*10000)).padStart(4,'0')).join(' '),serial:id,feature:['Голографический узор','Скрытая гравировка','Серия ограниченного выпуска','Микротекст','Неоновый кант','Редкий сплав'][Math.floor(Math.random()*6)],time:Date.now(),claimed:false};
+}
+function cardHTML(c,compact=false){const material=c.material||'holo';const pattern=c.pattern||'radial-gradient(circle at 80% 20%,#ffffff22,transparent 42%)';return `<div class="game-card" data-material="${material}" style="background:linear-gradient(125deg,${c.p1},${c.p2})" title="Вымышленная коллекционная карта · ${c.designName||'CARDHUNT'}"><div class="design-pattern" style="background-image:${pattern}"></div><div class="holo"></div><div class="card-edge"></div><div class="card-content"><div class="card-top"><span>${c.bank}</span><span>✦ ${c.year} <i class="contactless">)))</i></span></div><div class="micro">${c.series||'CARDHUNT'} / ${c.serial.slice(-4)}</div><div class="chip"><i></i><i></i><i></i></div><div class="card-number">${c.number}</div><div class="card-bottom"><div>${c.designLabel||'VIRTUAL ARCHIVE'}<b>${c.name}</b></div><div class="card-brand">${c.brandMark||'CH'}</div></div></div></div>`}
+function resultHTML(c){let r=rarity.find(x=>x.name===c.rarity);return `<div class="result"><div class="result-head"><span class="eyebrow">Новая находка · ${c.serial}</span><span class="rarity" style="color:${c.color};border:1px solid ${c.color}66">${c.rarity.toUpperCase()}</span></div><div class="card-stage">${cardHTML(c)}</div><h3>${c.name}</h3><div class="sub">${c.bank} · ${c.series||'CARDHUNT'} · ${c.condition} · ${c.year}</div><div class="result-grid"><div class="metric"><small>Игровой баланс</small><b>${fmt(c.balance)} ${c.currency}</b></div><div class="metric"><small>Ценность</small><b>${fmt(c.value)} XP</b></div><div class="metric"><small>Особенность</small><b>${c.feature}</b></div></div><div class="action-row">${c.claimed?'<button class="secondary" disabled>✓ Остаток извлечён</button>':`<button class="primary" style="padding:10px 15px;font-size:12px" onclick="window.claimCard('${c.serial}')">ИЗВЛЕЧЬ ОСТАТОК</button>`}<button class="secondary" onclick="window.pinMuseum('${c.serial}')">◇ В музей</button></div></div>`}
+function findCard(){
+ regen();if(state.energy<searchCost()){toast('Недостаточно энергии. Она восстанавливается со временем.');render();return}
+ state.energy-=searchCost();$('scanStatus').textContent='Сканирование…';$('findBtn').disabled=true;
+ setTimeout(()=>{
+  let c=makeCard();state.cards.unshift(c);state.found++;state.xp+=Math.max(8,c.value/2);if(c.rarity==='Легендарная'||c.rarity==='Мифическая'||c.rarity==='Артефакт'||c.rarity==='Абсолютная')state.pity=0;else state.pity++;
+  state.lastCard=c.serial;state.feed.unshift(c);state.feed=state.feed.slice(0,6);
+  while(state.xp>=levelNeed()){state.xp-=levelNeed();state.level++;toast('Новый уровень: '+state.level+'!')}
+  save();$('scanStatus').textContent='Сигнал найден';$('findBtn').disabled=false;render();
+  $('revealTitle').textContent=c.rarity==='Абсолютная'?'АБСОЛЮТНАЯ НАХОДКА!':c.rarity==='Артефакт'?'Обнаружен артефакт!':'Карта обнаружена!';
+  $('revealCard').innerHTML=cardHTML(c);$('revealText').textContent=c.name+' · '+c.rarity+' · '+fmt(c.balance)+' '+c.currency+' (игровой баланс)';
+  $('revealModal').classList.add('show');
+ },850);
+}
+window.claimCard=id=>{let c=state.cards.find(x=>x.serial===id);if(!c||c.claimed)return;c.claimed=true;let bonus=Math.floor(c.balance);state.money+=bonus;state.earned+=bonus;state.xp+=Math.max(5,Math.floor(bonus/500));save();render();toast('Зачислено '+fmt(bonus)+' '+c.currency+' в игровой кошелёк')};
+window.pinMuseum=id=>{let c=state.cards.find(x=>x.serial===id);if(!c)return;c.pinned=true;save();render();toast('Карта добавлена в музей')};
+function buyUpgrade(id){let u=upgrades.find(x=>x.id===id),lv=getLv(id),price=cost(u);if(lv>=u.max||state.money<price)return;state.money-=price;state.upgrades[id]=lv+1;if(id==='battery'){state.maxEnergy+=20;state.energy=Math.min(state.maxEnergy,state.energy+20)}save();render();toast('Улучшение приобретено')}
+function render(){
+ regen();$('money').textContent=fmt(state.money)+' ₽';$('energy').textContent=fmt(state.energy)+' / '+fmt(state.maxEnergy);$('level').textContent=state.level+' · '+fmt(state.xp)+' XP';$('searchCost').textContent=searchCost();$('collectionCount').textContent=state.cards.length;
+ $('statFound').textContent=state.found;$('statRare').textContent=state.cards.length?state.cards.reduce((a,c)=>rarity.findIndex(r=>r.name===c.rarity)>rarity.findIndex(r=>r.name===a.rarity)?c:a,state.cards[0]).rarity:'—';$('statEarned').textContent=fmt(state.earned)+' ₽';$('statXp').textContent=fmt(state.xp)+' XP';$('xpText').textContent=fmt(state.xp)+' / '+fmt(levelNeed())+' XP';$('levelSmall').textContent='Ур. '+state.level;$('xpBar').style.width=(state.xp/levelNeed()*100)+'%';
+ $('latestResult').innerHTML=state.lastCard&&state.cards.find(c=>c.serial===state.lastCard)?resultHTML(state.cards.find(c=>c.serial===state.lastCard)):'<div class="empty">Здесь появится твоя последняя находка.<br>Запусти сканирование, чтобы начать коллекцию.</div>';
+ $('feed').innerHTML=state.feed.length?state.feed.map(c=>`<div class="feed-item"><b style="color:${c.color}">${c.rarity}</b>${c.name}<div class="muted">${c.year} · ${fmt(c.value)} ценности</div></div>`).join(''):'<div class="empty">Пока нет находок</div>';
+ $('odds').innerHTML=rarity.map(r=>`<div class="mini-row"><span style="color:${r.color}">${r.name}</span><b>${r.chance}%</b></div>`).join('');
+ renderCollection();renderUpgrades();renderAlbums();renderMuseum();save();
+}
+function renderCollection(){let arr=[...state.cards],f=$('filterRarity').value,s=$('sortCards').value;if(f!=='all')arr=arr.filter(c=>c.rarity===f);if(s==='value')arr.sort((a,b)=>b.value-a.value);if(s==='balance')arr.sort((a,b)=>b.balance-a.balance);if(s==='rarity')arr.sort((a,b)=>rarity.findIndex(x=>x.name===b.rarity)-rarity.findIndex(x=>x.name===a.rarity));$('collectionSummary').textContent=`Найдено: ${state.cards.length} карт · уникальных серий: ${new Set(state.cards.map(c=>c.name)).size}`;$('collectionGrid').innerHTML=arr.length?arr.map(c=>`<div class="collection-card" onclick="window.showCard('${c.serial}')">${cardHTML(c,true)}<h4>${c.name}</h4><small style="color:${c.color}">${c.rarity}</small><small style="display:block">${c.series||'CARDHUNT'} · ${fmt(c.balance)} ${c.currency} · ${c.year}</small></div>`).join(''):'<div class="empty">Коллекция пока пуста. Отправляйся на поиски!</div>'}
+window.showCard=id=>{let c=state.cards.find(x=>x.serial===id);if(!c)return;$('revealTitle').textContent=c.name;$('revealCard').innerHTML=cardHTML(c);$('revealText').textContent=c.rarity+' · '+fmt(c.balance)+' '+c.currency+' · '+c.feature;$('revealModal').classList.add('show')};
+function renderUpgrades(){$('upgradeList').innerHTML=upgrades.map(u=>{let lv=getLv(u.id),price=cost(u);return `<div class="upgrade"><div class="uicon">${u.icon}</div><div class="udesc"><b>${u.name} · ур. ${lv}/${u.max}</b><p>${u.desc}</p><div class="progress"><i style="width:${lv/u.max*100}%"></i></div></div><button onclick="window.buy('${u.id}')" ${lv>=u.max||state.money<price?'disabled':''}>${lv>=u.max?'МАКС':fmt(price)+' ₽'}</button></div>`}).join('')}
+window.buy=buyUpgrade;
+function renderAlbums(){$('albumList').innerHTML=albumDefs.map(a=>{let done=a.check(state.cards),claimed=state.claimed.includes(a.id),count=a.id==='world'?new Set(state.cards.map(c=>c.currency)).size:a.id==='rainbow'?new Set(state.cards.map(c=>c.rarity)).size:a.id==='archive'?state.cards.length:a.check(state.cards)?1:0;return `<div class="album"><div style="display:flex;justify-content:space-between;gap:10px"><b>${a.name}</b><b style="color:var(--gold)">${done?'✓ Выполнено':count+'/'+a.goal}</b></div><p>${a.desc}</p><div class="progress"><i style="width:${Math.min(100,count/a.goal*100)}%"></i></div><div class="mini-row"><span>Награда: ${fmt(a.reward)} ₽</span><button class="secondary" style="padding:6px 9px" onclick="window.albumReward('${a.id}')" ${!done||claimed?'disabled':''}>${claimed?'Получено':'Забрать'}</button></div></div>`}).join('')}
+window.albumReward=id=>{let a=albumDefs.find(x=>x.id===id);if(!a||state.claimed.includes(id)||!a.check(state.cards))return;state.claimed.push(id);state.money+=a.reward;save();render();toast('Награда альбома: '+fmt(a.reward)+' ₽')};
+function renderMuseum(){let arr=state.cards.filter(c=>c.pinned).sort((a,b)=>b.value-a.value).slice(0,12);$('museumGrid').innerHTML=arr.length?arr.map(c=>`<div class="collection-card" onclick="window.showCard('${c.serial}')">${cardHTML(c,true)}<h4>${c.name}</h4><small style="color:${c.color}">${c.rarity} · ${fmt(c.value)} ценности</small></div>`).join(''):'<div class="empty">Музей пуст. Добавляй сюда лучшие карты из коллекции.</div>'}
+function showView(v){document.querySelectorAll('.content-view').forEach(x=>x.classList.toggle('active',x.id==='view-'+v));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===v));}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+$('findBtn').addEventListener('click',findCard);$('closeReveal').addEventListener('click',()=>$('revealModal').classList.remove('show'));$('revealModal').addEventListener('click',e=>{if(e.target===$('revealModal'))$('revealModal').classList.remove('show')});
+$('sortCards').addEventListener('change',renderCollection);$('filterRarity').addEventListener('change',renderCollection);
+document.addEventListener('pointermove',e=>{const card=e.target.closest('.game-card');if(!card||window.matchMedia('(hover: none)').matches)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*9}deg) rotateX(${-y*8}deg)`});
+document.addEventListener('pointerout',e=>{const card=e.target.closest('.game-card');if(card&&!card.contains(e.relatedTarget))card.style.transform='rotateY(0) rotateX(0)'});
+
+let autoTimer=null;setInterval(()=>{regen();if(getLv('autosearch')>0&&state.energy>=searchCost()&&Math.random()<.23){state.energy-=searchCost();let c=makeCard();state.cards.unshift(c);state.found++;state.xp+=10;state.lastCard=c.serial;state.feed.unshift(c);state.feed=state.feed.slice(0,6);state.pity++;save();render();toast('Автопоиск обнаружил: '+c.name)}else render()},5000);
+render();
+})();
+</script>
+</body></html>
